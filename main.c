@@ -25,7 +25,7 @@ int main() {
          "Guess the number.\n"
          "You have %d opportunities.\n\n"
          "Every time you enter a number, I will give you some tips.\n"
-         "'hit' means that the numbers are correct, "
+         "'hit' means that the numbers are correct "
          "but in different positions.\n"
          "'HR' means that both the number and its position are identical.\n\n"
          "Let's try!\n\n", ITERATION);
