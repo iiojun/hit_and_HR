@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "gennumber.h"
 
 #define ITER 10000
 
