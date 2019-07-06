@@ -60,5 +60,5 @@ print_hints(unsigned int user, unsigned int system) {
       }
     }
   }
-  printf("%d hit(s) and %d HR(s).\n", hit, hr);
+  printf("%d hit(s) and %d HR(s).\n\n", hit, hr);
 }
