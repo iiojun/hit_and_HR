@@ -22,7 +22,6 @@ check_digits(unsigned int d) {
     d3 = n_digit(d, 2);
     d4 = n_digit(d, 1);
 
-
     flag = (d1-d2) * (d1-d3) * (d1-d4) * (d2-d3) * (d2-d4) * (d3-d4);
 
     /* Note: 'if (flag) {...}' means 'if (flag != 0) {...}'. */
@@ -42,9 +41,7 @@ check_digits(unsigned int d) {
    provided as parameters, 'user' and 'system.' */
 void 
 print_hints(unsigned int user, unsigned int system) {
-  unsigned char u[4], s[4];
-  unsigned char i, j;
-  unsigned char hit = 0, hr = 0;
+  unsigned char u[4], s[4], i, j, hit = 0, hr = 0;
 
   for (i = 0; i < 4; i++) {
     u[i] = n_digit(user, 4-i);
