@@ -19,10 +19,13 @@ int main() {
   /* Clear the screen and move the cursor to (0, 0) */
   printf("\033[2J\033[0;0H"); 
   printf("Welcome to the hit-and-HR game.\n"
-         "I have a secret four-digit number\n"
-         "whose every digits are different.\n\n"
+         "I have a secret four-digit number whose every digits are different.\n\n"
          "Guess the number.\n"
-         "You have %d opportunities. Let's try!\n\n", ITERATION);
+         "You have %d opportunities.\n\n"
+         "Every time you enter a number, I give you some hints.\n"
+         "'hit' means that the number is correct but its position is different.\n"
+         "'HR' means that both the number and its position are identical.\n\n"
+         "Let's try!\n\n", ITERATION);
 
   do {
     char flag = 0;
