@@ -7,9 +7,10 @@
 #define ITERATION	5
 
 int main() {
-  char ctr = 1;
+  char ctr = 0;
   unsigned int fourdigit_number;
   unsigned int hidden_number;
+  char *iter_msg[ITERATION] = { "1st", "2nd", "3rd", "4th", "5th" };
 
   /* After setting a seed for the random number generator,
      a secret four-digit number is set to 'hidden_number.' */
@@ -19,17 +20,19 @@ int main() {
   /* Clear the screen and move the cursor to (0, 0) */
   printf("\033[2J\033[0;0H"); 
   printf("Welcome to the hit-and-HR game.\n"
-         "I have a secret four-digit number whose every digits are different.\n\n"
+         "I have a secret four-digit number "
+         "whose every digits are different.\n\n"
          "Guess the number.\n"
          "You have %d opportunities.\n\n"
          "Every time you enter a number, I give you some hints.\n"
-         "'hit' means that the number is correct but its position is different.\n"
+         "'hit' means that the number is correct "
+         "but its position is different.\n"
          "'HR' means that both the number and its position are identical.\n\n"
          "Let's try!\n\n", ITERATION);
 
   do {
     char flag = 0;
-    printf("#%d try...\n", ctr);
+    printf("%s try...\n", iter_msg[ctr]);
 
     /* Iterations until acquiring an appropriate four-digit number. */
     do {
@@ -54,12 +57,12 @@ int main() {
     }
 
   /* User's trials are limited within the ITERATION times. */
-  } while (ctr++ < ITERATION);
+  } while (++ctr < ITERATION);
 
   printf("My secret number was %04d.\n", hidden_number);
-  printf((ctr > ITERATION) ? "You lose.\n" : "BINGO! You win!\n"); 
+  printf((ctr == ITERATION) ? "You lose.\n" : "BINGO! You win!\n"); 
 /*
-  if (ctr > ITERATION) {
+  if (ctr == ITERATION) {
     printf("You lose.\n");
   } else {
     printf("BINGO! You win!\n");
