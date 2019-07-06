@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include "interaction.h"
 
 /* Get the n-th digit. 
    'pow(10, n-1)' means '10^(n-1).' */
