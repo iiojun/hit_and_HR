@@ -52,12 +52,11 @@ print_hints(unsigned int user, unsigned int system) {
   }
   printf("Umm..., ");
   for (i = 0; i < 4; i++) {
-    if (u[i] == s[i]) {
-      hr++; continue;
-    } else {
-      for (j = 0; j < 4; j++) {
-        if (j == i) continue;
-        if (u[i] == s[j]) { hit++; break; }
+    for (j = 0; j < 4; j++) {
+      if (u[i] == s[j]) {
+        if (i == j) { hr++; } else { hit++; }
+        break; /* Note: this statement would break out 
+                        only from the inner loop. */
       }
     }
   }
