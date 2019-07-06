@@ -8,7 +8,7 @@
 
 int main() {
   char ctr = 1;
-  unsigned int d;
+  unsigned int fourdigit_number;
   unsigned int hidden_number;
 
   /* After setting a seed for the random number generator,
@@ -23,8 +23,8 @@ int main() {
     /* Iterations until acquiring an appropriate four-digit number. */
     do {
       printf("Enter a four-digit number: ");
-      scanf("%d", &d);
-      flag = check_digits(d); /* expecting the flag becomes 1(true). */
+      scanf("%d", &fourdigit_number);
+      flag = check_digits(fourdigit_number); /* expecting the flag becomes 1(true). */
 
       if (flag == 0) { /* Note: this can be written as 'if (!flag) {' */ 
         printf("Please enter an appropriate number.\n"); 
@@ -34,12 +34,12 @@ int main() {
     /* Confirm whether the user's input hits the correct answer or not.
        If the user does not reach the answer, this provides some hints
        for the next trial. */
-    if (hidden_number == d) {
+    if (hidden_number == fourdigit_number) {
       break;
       /* Note: The value of 'ctr' would remain less than ITERATION,
          if you find the correct number before 'ctr' reaches ITERATION. */ 
     } else {
-      print_hints(d, hidden_number);
+      print_hints(fourdigit_number, hidden_number);
     }
 
   /* User's trials are limited within the ITERATION times. */
