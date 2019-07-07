@@ -1,21 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include "gennumber.h"
-#include "interaction.h"
-
+#include <stdio.h>        // for printf()
+#include <stdlib.h>       // for srand48()
+#include <time.h>         // for time()
+#include "gennumber.h"    // for gennumber()
+#include "interaction.h"  // for print_init_message(), user_input(), 
+                          // print_hints(), ITERATION, and ITER_MSGS
 int main() {
   char ctr = 0;
-  unsigned int fourdigit_number;
-  unsigned int hidden_number;
+  unsigned int fourdigit_number, hidden_number;
   char *iter_msg[ITERATION] = ITER_MSGS;
 
   /* After setting a seed for the random number generator,
      a secret four-digit number is set to 'hidden_number.' */
   srand48((unsigned char)time(NULL));
   hidden_number = gennumber();
+
   print_init_message();
- 
+
   /* Iterations until acquiring an appropriate four-digit number. */
   do {
     printf("%s try...\n", iter_msg[ctr]);
@@ -27,7 +27,7 @@ int main() {
        if you find the correct number before 'ctr' reaches ITERATION. */ 
     if (hidden_number == fourdigit_number) { break; }
     print_hints(fourdigit_number, hidden_number);
-    
+  
   /* User can try guessing the number until the counter reaches ITERATION. */
   } while (++ctr < ITERATION);
 
