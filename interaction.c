@@ -37,6 +37,23 @@ check_digits(unsigned int d) {
   return (flag != 0);
 }
 
+/* This function makes initial message. */
+void
+print_init_message() {
+  /* Clear the screen and move the cursor to (0, 0) */
+  printf("\033[2J\033[0;0H"); 
+  printf("Welcome to the hit-and-HR game.\n"
+         "I have a secret four-digit number "
+         "where every digit is different.\n\n"
+         "Guess the number.\n"
+         "You have %d opportunities.\n\n"
+         "Every time you enter a number, I will give you some clues.\n"
+         "'hit' means that the numbers are correct "
+         "but in different positions.\n"
+         "'HR' means that both the number and its position are identical.\n\n"
+         "Let's try!\n\n", ITERATION);
+}
+
 /* This function requests the user to enter 
    a four-digit number in the proper format. */
 unsigned int
