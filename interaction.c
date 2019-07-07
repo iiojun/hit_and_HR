@@ -41,7 +41,7 @@ print_init_message() {
          "I have a secret four-digit number "
            "where every digit is different.\n\n"
          "Guess the number.\n"
-         "You have %d opportunities.\n\n"
+         "There are %d opportunities to submit an answer.\n\n"
          "Every time you enter a number, I will give you some clues.\n"
          "'hit' means that the numbers are correct "
            "but in different positions.\n"
