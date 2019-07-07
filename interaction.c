@@ -1,6 +1,6 @@
 #include <stdio.h>         // for printf() and scanf()
 #include <math.h>          // for pow()
-#include "interaction.h"   // for ITERATION
+#include "interaction.h"   // for INIT_MSG, ITERATION
 
 /* Get the n-th digit. 
    'pow(10, n-1)' means '10^(n-1).' */
@@ -36,23 +36,8 @@ check_digits(unsigned int d) {
 void
 print_init_message() {
   /* Clear the screen and move the cursor to (0, 0) */
-  printf("\033[2J\033[0;0H"); 
-  printf("Welcome to the hit-and-HR game.\n"
-         "I have a secret four-digit number "
-           "where every digit is different.\n\n"
-         "Guess the number.\n"
-         "There are %d opportunities to submit an answer.\n\n"
-         "Every time you enter a number, I will give you some clues.\n"
-         "'hit' means that the numbers are correct "
-           "but in different positions.\n"
-         "'HR' means that both the numbers and "
-           "their positions are identical.\n\n"
-         "Example:\n"
-         "  If the number you entered is '1470' "
-         "and the secret number is '7481,'\n"
-         "  the message I give you will be "
-         "'two hits (for 1 and 7) and one HR (for 4).'\n\n"
-         "Let's try!\n", ITERATION);
+  printf(CLEAR_SCREEN); 
+  printf(INIT_MSG, ITERATION);
 }
 
 /* This function requests the user to enter 
