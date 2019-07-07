@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <stdlib.h>     // for drand48()
 #include "gennumber.h"
 
 #define ITER 10000
@@ -11,7 +11,7 @@ shuffle(unsigned char *str) {
   unsigned char p, q, tmp;
   unsigned int i;
 
-  /* Swap the characters located at 'p' and 'q,' ITER-times. */
+  /* Swap the characters located at 'p' and 'q' ITER times. */
   for (i = 0; i < ITER; i++) {
     p = (unsigned char)(drand48()*10);
     q = (unsigned char)(drand48()*10);
@@ -26,7 +26,8 @@ shuffle(unsigned char *str) {
 unsigned int
 gennumber() {
   unsigned char str[] = "0123456789";
-  unsigned int i, d;
+  unsigned int d;
+
   shuffle(str);
 
   /* 'str[x]' has the value of the character code of '0' to '9.'
