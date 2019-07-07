@@ -37,6 +37,24 @@ check_digits(unsigned int d) {
   return (flag != 0);
 }
 
+/* This function requests the user to enter 
+   a four-digit number in the proper format. */
+unsigned int
+user_input() {
+  unsigned int fourdigit_number;
+  unsigned char flag = 0;
+  do {
+    printf("Enter a four-digit number: ");
+    scanf("%d", &fourdigit_number);
+    flag = check_digits(fourdigit_number); /* expecting the flag becomes 1(true). */
+    
+    if (flag == 0) { /* Note: this can be written as 'if (!flag) {' */ 
+      printf("Please enter an appropriate number.\n"); 
+    }
+  } while (flag == 0); /* this should be '} while (!flag);' */
+  return fourdigit_number;
+}
+
 /* This function shows some hints according to 
    the comparison of the two four-digit numbers 
    provided as parameters, 'user' and 'system.' */
