@@ -21,7 +21,7 @@ int main() {
   printf("\033[2J\033[0;0H"); 
   printf("Welcome to the hit-and-HR game.\n"
          "I have a secret four-digit number "
-         "whose every digits are different.\n\n"
+         "where every digit is different.\n\n"
          "Guess the number.\n"
          "You have %d opportunities.\n\n"
          "Every time you enter a number, I will give you some tips.\n"
