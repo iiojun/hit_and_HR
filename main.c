@@ -24,50 +24,29 @@ int main() {
          "where every digit is different.\n\n"
          "Guess the number.\n"
          "You have %d opportunities.\n\n"
-         "Every time you enter a number, I will give you some tips.\n"
+         "Every time you enter a number, I will give you some clues.\n"
          "'hit' means that the numbers are correct "
          "but in different positions.\n"
          "'HR' means that both the number and its position are identical.\n\n"
          "Let's try!\n\n", ITERATION);
-
+ 
+  /* Iterations until acquiring an appropriate four-digit number. */
   do {
-    char flag = 0;
     printf("%s try...\n", iter_msg[ctr]);
-
-    /* Iterations until acquiring an appropriate four-digit number. */
-    do {
-      printf("Enter a four-digit number: ");
-      scanf("%d", &fourdigit_number);
-      flag = check_digits(fourdigit_number); /* expecting the flag becomes 1(true). */
-
-      if (flag == 0) { /* Note: this can be written as 'if (!flag) {' */ 
-        printf("Please enter an appropriate number.\n"); 
-      }
-    } while (flag == 0); /* this should be '} while (!flag);' */
-
+    fourdigit_number = user_input();
     /* Confirm whether the user's input hits the correct answer or not.
        If the user does not reach the answer, this provides some hints
-       for the next trial. */
-    if (hidden_number == fourdigit_number) {
-      break;
-      /* Note: The value of 'ctr' would remain less than ITERATION,
-         if you find the correct number before 'ctr' reaches ITERATION. */ 
-    } else {
-      print_hints(fourdigit_number, hidden_number);
-    }
-
-  /* User's trials are limited within the ITERATION times. */
+       for the next trial. 
+       Note: The value of 'ctr' would remain less than ITERATION,
+       if you find the correct number before 'ctr' reaches ITERATION. */ 
+    if (hidden_number == fourdigit_number) { break; }
+    print_hints(fourdigit_number, hidden_number);
+    
+  /* User can try guessing the number until the counter reaches ITERATION. */
   } while (++ctr < ITERATION);
 
   printf("My secret number was %04d.\n", hidden_number);
   printf((ctr == ITERATION) ? "You lose.\n" : "BINGO! You win!\n"); 
-/*
-  if (ctr == ITERATION) {
-    printf("You lose.\n");
-  } else {
-    printf("BINGO! You win!\n");
-  }
-*/
 
   return 0;
 }
