@@ -38,12 +38,15 @@ print_init_message() {
   /* Clear the screen and move the cursor to (0, 0) */
   printf("\033[2J\033[0;0H"); 
   printf("Welcome to the hit-and-HR game.\n"
-         "I have a secret four-digit number where every digit is different.\n\n"
+         "I have a secret four-digit number "
+           "where every digit is different.\n\n"
          "Guess the number.\n"
          "You have %d opportunities.\n\n"
          "Every time you enter a number, I will give you some clues.\n"
-         "'hit' means that the numbers are correct but in different positions.\n"
-         "'HR' means that both the number and its position are identical.\n\n"
+         "'hit' means that the numbers are correct "
+           "but in different positions.\n"
+         "'HR' means that both the numbers and "
+           "their positions are identical.\n\n"
          "Let's try!\n\n", ITERATION);
 }
 
@@ -57,7 +60,9 @@ user_input() {
   while (flag == 0) { /* this should be 'while (!flag) {' */
     printf("Enter a four-digit number: ");
     scanf("%d", &fourdigit_number);
-    flag = check_digits(fourdigit_number); /* expecting the flag becomes 1(true). */    
+    /* Check the appropriateness of the user's input, 
+       expecting the flag becomes 1(true). */    
+    flag = check_digits(fourdigit_number);
     if (flag == 0) { /* Note: this can be written as 'if (!flag) {' */ 
       printf("Please enter an appropriate number.\n"); 
     }
@@ -81,7 +86,8 @@ print_hints(unsigned int user, unsigned int system) {
     for (j = 0; j < 4; j++) {
       if (u[i] == s[j]) {
         if (i == j) { hr++; } else { hit++; }
-        break; /* Note: this statement would break out only from the inner loop. */
+        break; 
+        /* Note: this statement would break out only from the inner loop. */
       }
     }
   }
