@@ -1,8 +1,8 @@
 LDFLAGS += -lm
 
-numquiz: main.o gennumber.o interaction.o
-	$(CC) *.o -o numquiz $(CFLAGS) $(LDFLAGS)
+hhr: main.o gennumber.o interaction.o
+	$(CC) *.o -o hhr $(CFLAGS) $(LDFLAGS)
 
 clean:
-	rm *.o numquiz
+	rm *.o hhr
 
