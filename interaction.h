@@ -1,2 +1,2 @@
-char check_digits(unsigned int);
+unsigned int user_input();
 void print_hints(unsigned int, unsigned int);
