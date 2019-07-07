@@ -12,7 +12,7 @@ Every time you enter a number, I will give you some clues.\n\
 Example:\n\
   If the number you entered is '1470' and the secret number is '7481,'\n\
   the message I give you will be 'two hits (for 1 and 7)\
-and one HR (for 4).'\n\n\
+ and one HR (for 4).'\n\n\
 Let's try!\n"
 
 void print_init_message();
