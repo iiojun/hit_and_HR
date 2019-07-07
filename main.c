@@ -5,30 +5,19 @@
 #include "interaction.h"
 
 #define ITERATION	5
+#define ITER_MSGS { "1st", "2nd", "3rd", "4th", "5th" }
 
 int main() {
   char ctr = 0;
   unsigned int fourdigit_number;
   unsigned int hidden_number;
-  char *iter_msg[ITERATION] = { "1st", "2nd", "3rd", "4th", "5th" };
+  char *iter_msg[ITERATION] = ITER_MSGS;
 
   /* After setting a seed for the random number generator,
      a secret four-digit number is set to 'hidden_number.' */
   srand48((unsigned char)time(NULL));
   hidden_number = gennumber();
-
-  /* Clear the screen and move the cursor to (0, 0) */
-  printf("\033[2J\033[0;0H"); 
-  printf("Welcome to the hit-and-HR game.\n"
-         "I have a secret four-digit number "
-         "where every digit is different.\n\n"
-         "Guess the number.\n"
-         "You have %d opportunities.\n\n"
-         "Every time you enter a number, I will give you some clues.\n"
-         "'hit' means that the numbers are correct "
-         "but in different positions.\n"
-         "'HR' means that both the number and its position are identical.\n\n"
-         "Let's try!\n\n", ITERATION);
+  print_init_message();
  
   /* Iterations until acquiring an appropriate four-digit number. */
   do {
