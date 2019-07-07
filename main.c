@@ -18,7 +18,7 @@ int main() {
 
   /* Iterations until acquiring an appropriate four-digit number. */
   do {
-    printf("%s try...\n", iter_msg[ctr]);
+    printf("\n%s try...\n", iter_msg[ctr]);
     fourdigit_number = user_input();
     /* Confirm whether the user's input hits the correct answer or not.
        If the user does not reach the answer, this provides some hints
@@ -31,7 +31,7 @@ int main() {
   /* User can try guessing the number until the counter reaches ITERATION. */
   } while (++ctr < ITERATION);
 
-  printf("My secret number was %04d.\n", hidden_number);
+  printf("\nMy secret number was %04d.\n", hidden_number);
   printf((ctr == ITERATION) ? "You lose.\n" : "BINGO! You win!\n"); 
 
   return 0;

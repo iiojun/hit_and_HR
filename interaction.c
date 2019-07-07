@@ -52,7 +52,7 @@ print_init_message() {
          "and the secret number is '7481,'\n"
          "  the message I give you will be "
          "'two hits (for 1 and 7) and one HR (for 4).'\n\n"
-         "Let's try!\n\n", ITERATION);
+         "Let's try!\n", ITERATION);
 }
 
 /* This function requests the user to enter 
@@ -96,5 +96,5 @@ print_hints(unsigned int user, unsigned int system) {
       }
     }
   }
-  printf("%d hit(s) and %d HR(s).\n\n", hit, hr);
+  printf("%d hit(s) and %d HR(s).\n", hit, hr);
 }
