@@ -1,5 +1,7 @@
+LDFLAGS += -lm
+
 numquiz: main.o gennumber.o interaction.o
-	gcc *.o -o numquiz -lm
+	$(CC) *.o -o numquiz $(CFLAGS) $(LDFLAGS)
 
 clean:
 	rm *.o numquiz
