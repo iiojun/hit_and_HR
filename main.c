@@ -4,9 +4,6 @@
 #include "gennumber.h"
 #include "interaction.h"
 
-#define ITERATION	5
-#define ITER_MSGS { "1st", "2nd", "3rd", "4th", "5th" }
-
 int main() {
   char ctr = 0;
   unsigned int fourdigit_number;
