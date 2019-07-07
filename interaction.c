@@ -47,6 +47,11 @@ print_init_message() {
            "but in different positions.\n"
          "'HR' means that both the numbers and "
            "their positions are identical.\n\n"
+         "Example:\n"
+         "  If the number you entered is '1470' "
+         "and the secret number is '7481,'\n"
+         "  the message I give you will be "
+         "'two hits (for 1 and 7) and one HR (for 4).'\n\n"
          "Let's try!\n\n", ITERATION);
 }
 
