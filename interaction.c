@@ -1,4 +1,5 @@
 #include <stdio.h>         // for printf() and scanf()
+#include <stdlib.h>	   // for exit()
 #include <math.h>          // for pow()
 #include "interaction.h"   // for INIT_MSG, ITERATION
 
@@ -49,7 +50,10 @@ user_input() {
 
   while (flag == 0) { /* this should be 'while (!flag) {' */
     printf("Enter a four-digit number: ");
-    scanf("%d", &fourdigit_number);
+    if (scanf("%d", &fourdigit_number) == EOF) { 
+      printf("\nGood bye.\n");
+      exit(-1);
+    }
     /* Check the appropriateness of the user's input, 
        expecting the flag becomes 1(true). */    
     flag = check_digits(fourdigit_number);
@@ -81,5 +85,6 @@ print_hints(unsigned int user, unsigned int system) {
       }
     }
   }
-  printf("%d hit(s) and %d HR(s).\n", hit, hr);
+  printf("%d hit%s and %d HR%s.\n", 
+	hit, ((hit!=1)?"s":""), hr, ((hr!=1)?"s":""));
 }
